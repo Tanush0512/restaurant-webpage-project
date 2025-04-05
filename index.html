@@ -1,0 +1,14 @@
+// Assuming you have an array of category short names
+const categories = ['Lunch', 'Dinner', 'Sushi', 'Dessert', 'Drinks'];
+
+// Function to get a random category
+function getRandomCategory() {
+    const randomIndex = Math.floor(Math.random() * categories.length);
+    return categories[randomIndex];
+}
+
+// Update the Specials tile click event
+document.querySelector('#specials-tile').onclick = function() {
+    const randomCategoryShortName = getRandomCategory();
+    $dc.loadMenuItems(randomCategoryShortName);
+};
